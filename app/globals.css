@@ -8,7 +8,7 @@
   --color-surface: var(--color-white);
   --color-border: var(--color-neutral-200);
   --shadow-element:
-    0px 2px 3x -1px rgba(0, 0, 0, 0.1) 0px 1px 0px 0px rgb(26 29 35 / 0.02),
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgb(26 29 35 / 0.02),
     0 0px 0px 1px rgb(26 29 35 / 0.09);
 
   --radius-sm: 0.25rem;

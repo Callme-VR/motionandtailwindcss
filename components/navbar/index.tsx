@@ -4,7 +4,7 @@ import Image from "next/image";
 import Containers from "../containers"
 import Link from "next/link";
 import { useState } from "react";
-import { easeInOut, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 export default function Navbar() {
     const Navitems = [
@@ -50,23 +50,22 @@ export default function Navbar() {
             <motion.nav
                 animate={{
                     boxShadow: scrolled ? "var(--shadow-element)" : "none",
-                    width: scrolled ? "65%" : "100%",
-                    y: scrolled ? "10%" : "0%"
+                    width: scrolled ? "50%" : "70%",
+                    y: scrolled ? 6 : 0
                 }}
                 transition={{
-                    duration: 0.1,
-                    ease:linear
+                    duration: 0.2,
+                    ease: "linear"
                 }}
-                className="fixed inset-x-0 top-0 mx-auto flex  max-w-4xl items-center justify-between py-2 px-4">
+                className="fixed inset-x-0 top-0 mx-auto flex max-w-5xl items-center justify-between py-3 px-4 rounded-full bg-white/80 backdrop-blur-md z-50">
 
 
                 <Image className="rounded-full cursor-pointer h-11 w-9" src={"/logo.png"} alt="Logo" width={100} height={100} />
 
 
-                <div className="flex flex-center ">
-
+                <div className="flex items-center justify-center">
                     {Navitems.map((item, index) => {
-                        return <Link className=" relative  px-2 py-1 text-sm" key={index} href={item.href}
+                        return <Link className="relative px-2 py-1 text-sm" key={index} href={item.href}
                             onMouseEnter={() => setHovered(index)}
                             onMouseLeave={() => {
                                 setHovered(null);
@@ -74,7 +73,7 @@ export default function Navbar() {
                         >
 
                             {hovered === index && (
-                                <motion.span className="absolute inset-0 rounded-mg h-full w-full bg-neutral-100 dark:bg-neutral-200"
+                                <motion.span className="absolute inset-0 rounded-md h-full w-full bg-neutral-100 dark:bg-neutral-200"
                                     layoutId="hovered-span"
                                 />
                             )}
