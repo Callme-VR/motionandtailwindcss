@@ -1,22 +1,26 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
   --color-primary: var(--color-neutral-800);
   --color-secondary: var(--color-neutral-600);
   --color-accent: var(--color-blue-500);
-  --color-background: var(--color-neutral-100);
+  --color-background: var(--color-white);
   --color-surface: var(--color-white);
   --color-border: var(--color-neutral-200);
-  
+  --shadow-element:
+    0px 2px 3x -1px rgba(0, 0, 0, 0.1) 0px 1px 0px 0px rgb(26 29 35 / 0.02),
+    0 0px 0px 1px rgb(26 29 35 / 0.09);
+
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
-  
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -32,11 +36,11 @@
     --color-primary: var(--color-neutral-800);
     --color-secondary: var(--color-neutral-600);
     --color-accent: var(--color-blue-500);
-    --color-background: var(--color-neutral-100);
+    --color-background: var(--color-white);
     --color-surface: var(--color-white);
     --color-border: var(--color-neutral-200);
   }
-  
+
   .dark {
     --color-primary: var(--color-neutral-100);
     --color-secondary: var(--color-neutral-300);
@@ -45,27 +49,33 @@
     --color-surface: var(--color-neutral-800);
     --color-border: var(--color-neutral-700);
   }
-  
+
+  html,
   body {
     @apply bg-background text-primary antialiased;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
   }
-  
+
   p {
     @apply text-secondary leading-relaxed;
   }
-  
+
   a {
     @apply text-accent hover:underline;
   }
-  
+
   button {
     @apply focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
   }
-  
+
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }

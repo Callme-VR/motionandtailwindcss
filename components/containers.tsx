@@ -6,5 +6,5 @@ interface ContainerProps {
 }
 
 export default function Containers({ children, className }: ContainerProps) {
-  return <div className={cn("max-w-5xl mx-auto bg-white dark:bg-black w-full", className)}>{children}</div>;
+  return <div className={cn("max-w-5xl mx-auto bg-white  w-full", className)}>{children}</div>;
 }
